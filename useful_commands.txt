@@ -7,11 +7,12 @@ source .venv/bin/activate
 
 -------
 brew install postgresql
-brew services start postgresqlsudo -u postgres psql
+brew services start postgresql
+pip install dbt-postgres
 sudo -u postgres psql
 psql postgres
 psql -d dbt_local CONNEXT TO DB
-
+brew services list
 --------------
 ***IN PSQL***
 CREATE DATABASE nicogreen;
@@ -19,8 +20,14 @@ psql -d nicogreen
 \du LIST USERS
 CREATE USER dbt_user WITH PASSWORD 'dbt_password';
 \q QUIT
+\l LIST DATABASES
+psql -U dbt_user -d cat_corp (LOGIN TO DB)
+\dt *.* LIST ALL TABLES
+
 ------------
 ** dbt **
 dbt --version
 dbt init my_project
 cd my_project
+
+dbt run --select clean_orders (RUN A MODEL)
