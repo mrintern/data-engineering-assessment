@@ -1,0 +1,26 @@
+commands
+
+----------------
+** venv **
+python -m venv .venv
+source .venv/bin/activate
+
+-------
+brew install postgresql
+brew services start postgresqlsudo -u postgres psql
+sudo -u postgres psql
+psql postgres
+psql -d dbt_local CONNEXT TO DB
+
+--------------
+***IN PSQL***
+CREATE DATABASE nicogreen;
+psql -d nicogreen
+\du LIST USERS
+CREATE USER dbt_user WITH PASSWORD 'dbt_password';
+\q QUIT
+------------
+** dbt **
+dbt --version
+dbt init my_project
+cd my_project
