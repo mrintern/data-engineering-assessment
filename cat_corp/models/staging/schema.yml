@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: orders_cleaned.sql
+  - name: orders_cleaned
     description: "A cleaned version of the orders table"
     columns:
       - name: order_id
