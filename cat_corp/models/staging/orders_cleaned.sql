@@ -1,4 +1,4 @@
--- models/staging/clean_orders.sql
+-- models/staging/orders_cleaned.sql
 
 {{ config(materialized='table') }}
 
@@ -8,4 +8,3 @@ with raw_orders as (
 
 select *
 from raw_orders
-LIMIT 20

@@ -1,0 +1,12 @@
+
+version: 2
+
+models:
+  - name: orders_cleaned.sql
+    description: "A cleaned version of the orders table"
+    columns:
+      - name: order_id
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
