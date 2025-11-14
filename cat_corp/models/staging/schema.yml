@@ -4,9 +4,22 @@ version: 2
 models:
   - name: orders_cleaned
     description: "A cleaned version of the orders table"
+    tests:
+      - no_duplicates
     columns:
       - name: order_id
         description: "The primary key for this table"
         data_tests:
           - unique
           - not_null
+  - name: listing_cleaned
+    description: "A cleaned version of the listing table" 
+    tests:
+      - no_duplicates
+    columns:
+      - name: id
+        data_tests:
+          - not_null
+      - name: outlet_id
+        data_tests:
+          - not_null # nico - add the rest of the cols later
