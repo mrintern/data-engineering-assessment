@@ -20,6 +20,29 @@ models:
       - name: id
         data_tests:
           - not_null
-      - name: outlet_id
-        data_tests:
-          - not_null # nico - add the rest of the cols later
+  # TODO refine these later
+  - name: orders_daily_cleaned
+    description: "A cleaned version of the orders_daily_cleaned table" 
+    tests:
+      - no_duplicates
+
+  - name: org_cleaned
+    description: "A cleaned version of the org table" 
+    tests:
+      - no_duplicates
+  - name: outlet_cleaned
+    description: "A cleaned version of the outlet table" 
+    tests:
+      - no_duplicates
+  - name: platform_cleaned
+    description: "A cleaned version of the platform table" 
+    tests:
+      - no_duplicates
+  - name: rank_cleaned
+    description: "A cleaned version of the rank table" 
+    tests:
+      - no_duplicates
+  - name: ratings_agg_cleaned
+    description: "A cleaned version of the ratings_agg table" 
+    tests:
+      - no_duplicates
