@@ -13,6 +13,13 @@ models:
       - name: listing_id
         data_tests:
           - not_null
+      - name: status
+        data_tests:
+          - not_null
+      - name: placed_at
+        data_tests:
+          - not_null
+
   - name: listing_cleaned
     description: "A cleaned version of the listing table" 
     tests:
@@ -21,24 +28,87 @@ models:
       - name: id
         data_tests:
           - not_null
-  # TODO refine these later
+      - name: outlet_id
+        data_tests:
+          - not_null
+      - name: platform_id
+        data_tests:
+          - not_null
+      - name: timestamp
+        data_tests:
+          - not_null
+                  
   - name: orders_daily_cleaned
     description: "A cleaned version of the orders_daily_cleaned table" 
     tests:
       - no_duplicates
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+      - name: listing_id
+        data_tests:
+          - not_null
+      - name: orders
+        data_tests:
+          - not_null
+      - name: timestamp
+        data_tests:
+          - not_null
 
   - name: org_cleaned
     description: "A cleaned version of the org table" 
     tests:
       - no_duplicates
+    columns:
+      - name: id
+        data_tests:
+          - not_null
+      - name: name
+        data_tests:
+          - not_null
+      - name: timestamp
+        data_tests:
+          - not_null
+         
   - name: outlet_cleaned
     description: "A cleaned version of the outlet table" 
     tests:
       - no_duplicates
+    columns:
+      - name: id
+        data_tests:
+          - not_null
+      - name: org_id
+        data_tests:
+          - not_null
+      - name: name
+        data_tests:
+          - not_null
+      - name: latitude
+        data_tests:
+          - not_null
+      - name: longitude
+        data_tests:
+          - not_null
+      - name: timestamp
+        data_tests:
+          - not_null
+  
   - name: platform_cleaned
     description: "A cleaned version of the platform table" 
     tests:
       - no_duplicates
+    columns:
+      - name: id
+        data_tests:
+          - not_null
+      - name: name
+        data_tests:
+          - not_null
+      - name: country
+        data_tests:
+          - not_null
 
   - name: rank_cleaned
     description: "A cleaned version of the rank table" 
@@ -54,8 +124,24 @@ models:
       - name: date
         data_tests:
           - not_null
+      - name: is_online
+        data_tests:
+          - not_null
 
   - name: ratings_agg_cleaned
     description: "A cleaned version of the ratings_agg table" 
     tests:
       - no_duplicates
+    columns:
+      - name: date
+        data_tests:
+          - not_null
+      - name: listing_id
+        data_tests:
+          - not_null
+      - name: cnt_ratings
+        data_tests:
+          - not_null
+      - name: avg_rating
+        data_tests:
+          - not_null

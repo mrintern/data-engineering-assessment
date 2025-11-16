@@ -2,8 +2,15 @@
 {{ config(materialized='table') }}
 
 with raw_outlet as (
-    select * from {{ ref('outlet') }}
+    select DISTINCT * from {{ ref('outlet') }}
 )
 
-select DISTINCT *
+select 
+    id,
+    org_id,
+    name,
+    coalesce(latitude, 0.0)  as latitude,
+    coalesce(longitude, 0.0) as longitude,
+    timestamp
 from raw_outlet
+
