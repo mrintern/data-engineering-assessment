@@ -75,8 +75,8 @@ def main():
 		outlet_df = get_outlet_weather_df(outlet_id=outlet[0], outlet_lat=outlet[1], outlet_long=outlet[2])
 		combined_df = pd.concat([outlet_df, combined_df], ignore_index=True)
 	
-	timestamp = datetime.now().strftime("%Y%m%d")
-	output_path = f"{seeds_dir_path}/outlet_weather_data_{timestamp}.csv"
+	#timestamp = datetime.now().strftime("%Y%m%d")
+	output_path = f"{seeds_dir_path}/outlet_weather_data.csv"
 	print(f"Saving CSV to: {output_path}")
 	combined_df.to_csv(output_path, index=False)
 
