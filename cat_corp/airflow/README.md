@@ -8,3 +8,7 @@
 
 to run server
 - airflow standalone
+
+- if the airflow ui isnt popping up, check that port 8080 is free
+- lsof -i :8080
+- kill -9 PID_GOES_HERE      

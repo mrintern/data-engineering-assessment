@@ -1,8 +1,4 @@
 # Data Engineering Assessment
-- dbt
-- postgresql
-- airflow
-- sql
-- python
 
-:)
+
+- pip install requirements.txt

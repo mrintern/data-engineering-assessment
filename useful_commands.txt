@@ -30,4 +30,16 @@ dbt --version
 dbt init my_project
 cd my_project
 
-dbt run --select clean_orders (RUN A MODEL)
+dbt run --select orders_cleaned (RUN A MODEL)
+--------------
+** airflow **
+airflow db init
+password 2ufzehbtAdWqYvf9
+airflow standalone
+
+
+
+having airflow and dbt installed in the same venv caused dependency issues. 
+must delete dbt venv and reinstall dependencies. no biggie, just a venv.
+
+trying again in the morning.

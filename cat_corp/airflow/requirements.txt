@@ -1,5 +1,9 @@
 # Install Airflow with extras
 apache-airflow[celery,postgres,redis]==2.9.2
-
+openmeteo-requests
+requests-cache 
+retry-requests 
+numpy 
+pandas
 # Apply constraints
 --constraint https://raw.githubusercontent.com/apache/airflow/constraints-2.9.2/constraints-3.11.txt
