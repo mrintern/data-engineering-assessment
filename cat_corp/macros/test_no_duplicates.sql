@@ -10,7 +10,7 @@ grouped as (
     select
         *,
         count(*) over (
-            partition by {{ dbt_utils.star(model, except=['']) }}
+            partition by {{ dbt_utils.star(model, except=['']) }} -- partition by all columns
         ) as row_count
     from base
 )
