@@ -1,0 +1,21 @@
+
+version: 2
+
+models:
+  - name: listing_lookup
+    tests:
+      - no_duplicates
+    columns:
+      - name: id
+        data_tests:
+          - not_null
+          - unique      
+  - name: orders_daily_agg
+    tests:
+      - no_duplicates
+  - name: orders_status_daily
+    tests:
+      - no_duplicates
+  - name: rank_daily_agg
+    tests:
+      - no_duplicates

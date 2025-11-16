@@ -20,7 +20,6 @@ select a.*,
         partition by a.listing_id
         order by a.date
         ) as cnt_ratings_yesterday,
-        
         cnt_ratings - lag(e.cnt_ratings) over (
         partition by a.listing_id
         order by a.date
