@@ -1,0 +1,10 @@
+
+version: 2
+
+models:
+  - name: reporting
+    tests:
+      - no_duplicates
+
+
+ 
