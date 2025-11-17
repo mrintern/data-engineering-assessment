@@ -1,7 +1,6 @@
 
 {{ config(materialized='table') }}
 
-
 select 
     listing_id, date, count(*) as completed_orders
 from {{ ref('orders_cleaned') }}
